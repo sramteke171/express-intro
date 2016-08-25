@@ -17,27 +17,20 @@ Market: SF
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Objective 1
-- Objective 2
-- Objective 3
+- draw a diagram of the request response cycle with Node.js and Express included and labeled.
+- describe the roles that Node.js and Express play in building a server.
+- use `npm` to initialize a node project and write a local web server to serve JSON and static assets with Express.
+
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Skill 1
+-
 - Skill 2
 - Skill 3
 
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Intro to Express
 
-| Objectives |
-| :--- |
-| Explain the request response cycle |
-| Use npm (node package manager) to initialize a node project |
-| Write a local Node.js web server with Express |
-| Serve JSON with Express |
-| Serve static assets with Express |
 
 ### Motivation (Why?)
 
