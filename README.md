@@ -5,13 +5,13 @@ Market: SF
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-# Express
+# Node.js and Express
 
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-...
+These are the first tools we'll use to write server-side code. In order to be a **full-stack** web developer, you'll need to have a grasp on writing code on the backend. Node and Express are the industry standard technologies for writing server-side JavaScript. If you find yourself working in an environment that using a full JS stack, you will be using Node.js and Express. Node is a lightweight and efficient runtime for building JavaScript servers. Express is a very popular and trending framework with a bevy of modules you can add to it.
 
 ### What are the objectives?
 <!-- specific/measurable goal for students to achieve -->
@@ -26,9 +26,8 @@ Market: SF
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
--
-- Skill 2
-- Skill 3
+- draw a figure of the request-response cycle with the details filled in on the front end (user, event listeners, AJAX, success callbacks, and HTTP verbs).
+- make an AJAX request to a third party API and explore the JSON data it returns.
 
 
 
