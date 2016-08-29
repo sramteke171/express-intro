@@ -17,8 +17,8 @@ These are the first tools we'll use to write server-side code. In order to be a 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- draw a diagram of the request response cycle with Node.js and Express included and labeled.
 - describe the roles that Node.js and Express play in building a server.
+- draw a diagram of the request response cycle with Node.js and Express included and labeled.
 - use `npm` to initialize a node project and write a local web server to serve JSON and static assets with Express.
 
 
@@ -53,24 +53,24 @@ To write server side code, is to lay out all of the possible requests that might
 
 ![image](https://cloud.githubusercontent.com/assets/6520345/18023096/c368ce26-6ba9-11e6-805a-4562a8853721.png)
 
-V8, the JavaScript engine that runs Chrome, is a piece of code written in C++. It creates a processor to take in JS code and translate it to make actionable assembly code/machine code so that the CPU can “do” what you have asked it to in JavaScript. (It’s really interesting to see the whole machine code output for a given line of JS...you can see this with a certain command in terminal). Node is a program that has all of the V8 code and more. It extends V8; V8 is embedded in NodeJS, and Node adds more functionality and syntax that V8 wouldn’t be able to understand. (V8 is created to meet the EcmaScript 6 standard of what JS should be able to do).
+V8, the JavaScript engine that runs Chrome, is a piece of code written in C++. It creates a processor to take in JS code and translate it to make actionable assembly code/machine code so that the CPU can “do” what you have asked it to in JavaScript. Node is a program that has all of the V8 code and more. It extends V8; V8 is embedded in NodeJS, and Node adds more functionality and syntax that V8 wouldn’t be able to understand. This syntax allows you to write server-side code. (V8 is created to meet the EcmaScript 6 - the standard that defines JavaScript).
 
-
-- Node.js is a JavaScript infrastructure that operates on the V8 Google Chrome JavaScript runtime, allowing you to write server-side code in JavaScript.
 - Node.js provides the ability to handle requests and issue responses.
 - It is fast.
 - It is fast largely because it is asynchronous, meaning code can run in parallel without "blocking" the call stack (the list of other concurrent commands).
-
-### NPM and NPM Init
-- NPM stands for Node Package Manager, and is a tool that allows us to easily download community-built Node packages.
-- Initialize new Node project with NPM: `npm init`.
-- Install NPM packages: `npm install --save express`.
-- NPM works with package.json, which is a list of project information and dependencies that can be installed on other computers and servers.
-
-### What is Node Good For?
 - Node really shines when it comes to heavy input-output type operations.
 - Realtime services like chat applications or conferencing platforms benefit from using Node.
 - APIs are also input/output heavy, and they also tend to work with JavaScript out of the box (think JSON). What better platform than Node?
+- Node is designed to accommodate [the module pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript), which means that it allows developers to write useful functionality and then share it with other developers. It is easy to pull in useful modules into your project (like express). This keeps functionality separate and helps projects feel organized.
+
+### NPM and NPM Init
+- Node Package Manager, usually called NPM, is a tool that allows us to easily download community-built Node packages.
+  * For example, instead of using a CDN to download bootstrap and make sure your version is up-to-date, you can install it with NPM, which will help you manage the downloads and versions.
+- Initialize new Node project with NPM: `npm init`. This will simply create one file, `package.json`.
+- NPM works with `package.json`, a file in your project, which is a list of project information. NPM makes sure that packages do not get uploaded or tracked in git (imagine how much unnecessary code you could be pushing and pulling each time). To make sure all collaborators are still on the same page, any package listed in `package.json` can easily be downloaded with one command, `npm install`, when somebody clones your project.
+- To install NPM packages *and* save them to `package.json`, use the `--save specification`: `npm install --save express` or `npm install --save bootstrap`.
+
+
 
 ### Express JS
 Express is a cutting-edge, unopinionated, server-side JavaScript framework that runs on a Node.js server. It is a very, very popular and trending framework with a bevy of modules you can add to it.
@@ -97,6 +97,8 @@ var server = app.listen(3000);
 
 
 ### Express file tree
+
+With frontend and backend code to organize, we should make sure to keep our files in a logical order.
 
 ```
 ├── server.js  // your server code
@@ -148,19 +150,6 @@ Today's <a href="https://github.com/sf-wdi-31/express-intro" target="_blank">exe
   * serving static files (images, css...)
 
 
-### Docs, Resources, Further Reading
-
-1. <a href="http://expressjs.com/starter/installing.html" target="_blank">Starting an Express Project</a>
-2. <a href="http://expressjs.com/starter/hello-world.html" target="_blank">Express Hello World</a>
-3. <a href="http://expressjs.com/starter/static-files.html" target="_blank">Express Static Files</a>
-4. <a href="http://expressjs.com/4x/api.html#res.render" target="_blank">Express res.render()</a>
-
-###Check for Understanding
-
-
-
-## Independent Practice
-Refine the skills covered in this workshop with this [lab](#)
 
 ## Closing Thoughts
 - review objectives & hierarchy of importance
@@ -171,4 +160,7 @@ Refine the skills covered in this workshop with this [lab](#)
 - Check for understanding
 
 ## Additional Resources
-- [External Resource](#)
+1. <a href="http://expressjs.com/starter/installing.html" target="_blank">Starting an Express Project</a>
+2. <a href="http://expressjs.com/starter/hello-world.html" target="_blank">Express Hello World</a>
+3. <a href="http://expressjs.com/starter/static-files.html" target="_blank">Express Static Files</a>
+4. <a href="http://expressjs.com/4x/api.html#res.render" target="_blank">Express res.render()</a>
