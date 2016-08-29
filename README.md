@@ -73,7 +73,12 @@ V8, the JavaScript engine that runs Chrome, is a piece of code written in C++. I
 
 
 ### Express JS
-Express is a cutting-edge, unopinionated, server-side JavaScript framework that runs on a Node.js server. It is a very, very popular and trending framework with a bevy of modules you can add to it.
+Express is a cutting-edge, unopinionated, server-side JavaScript framework that runs on a Node.js server. It is a popular framework with a bevy of modules you can add to it. Node is the platform and Express provides the specific functionality. If you were building a house rather than a server, Node would be the foundation and utilities, express would be the building material that comprises the above ground building.
+
+![image](https://cloud.githubusercontent.com/assets/6520345/18060592/f5954682-6dd3-11e6-99ba-5dc0b42a4ff8.png)
+
+
+
 
 - Express is a framework built on top of Node.js that makes development of web servers more intuitive and quicker.
 - Express allows us to easily set up routes that will trigger actions such as rendering pages or returning JSON.
@@ -152,12 +157,9 @@ Today's <a href="https://github.com/sf-wdi-31/express-intro" target="_blank">exe
 
 
 ## Closing Thoughts
-- review objectives & hierarchy of importance
-- look ahead & link to future workshops
-- clarify expectations and what developers should know by now
-- reiterate “the why” with a perspective of your intentions
-- create an active recall
-- Check for understanding
+- This afternoon we're going to learn more about the details of routes and resource serving in Express apps.
+- Check your own understanding: Do you know the differences between Node's role and Express's role? What do each of them do?
+- You'll be using this technology for the next several weeks!
 
 ## Additional Resources
 1. <a href="http://expressjs.com/starter/installing.html" target="_blank">Starting an Express Project</a>
