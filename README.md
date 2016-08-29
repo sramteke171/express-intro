@@ -29,11 +29,25 @@ These are the first tools we'll use to write server-side code. In order to be a 
 - draw a figure of the request-response cycle with the details filled in on the front end (user, event listeners, AJAX, success callbacks, and HTTP verbs).
 - make an AJAX request to a third party API and explore the JSON data it returns.
 
+## What is a server?
+
+<details>
+  <summary>Take 5 minutes to search the web to pull together a working definition of what a "server" is and what it does.</summary>
+  <h5>Meta question: how did you go about searching? </h5>
+</details>
+
+## What does it mean to program a server?
+
+We need to write the code that handles requests and figures out how to respond. It might need to format data into JSON, it might need to talk to a database to request a specific resource, and it might need to check if a user is authorized to see the resource they have requested.
+
+To write server side code, is to lay out all of the possible requests that might come in and give instructions for how to handle each type of request.
+
+![request](http://i.imgur.com/YXgj8.png)
 
 
-### Motivation (Why?)
+![image](https://cloud.githubusercontent.com/assets/6520345/18041555/0345ba10-6d6f-11e6-9a6f-c008aac1935a.png)
 
-Express is a cutting-edge, unopinionated, server-side JavaScript framework that runs on a Node.js server. It is a very, very popular and trending framework with a bevy of modules you can add to it.
+
 
 ### What is Node?
 - Node.js is a webserver that operates on the V8 Google Chrome JavaScript runtime, allowing you to write server-side code in JavaScript.
@@ -53,8 +67,12 @@ Express is a cutting-edge, unopinionated, server-side JavaScript framework that 
 - APIs are also input/output heavy, and they also tend to work with JavaScript out of the box (think JSON). What better platform than Node?
 
 ### Express JS
+Express is a cutting-edge, unopinionated, server-side JavaScript framework that runs on a Node.js server. It is a very, very popular and trending framework with a bevy of modules you can add to it.
+
 - Express is a framework built on top of Node.js that makes development of web servers more intuitive and quicker.
 - Express allows us to easily set up routes that will trigger actions such as rendering pages or returning JSON.
+
+Much like jQuery does for JavaScript, Express provides easy, intuitive syntax and a lot of built in functionality.
 
 ### Hello World in Express
 
@@ -69,11 +87,7 @@ app.get('/', function (req, res) {
 var server = app.listen(3000);
 ```
 
-### Request Response Cycle
 
-Remember that the interwebs is many clients querying many servers. We've done a lot with clients and APIs, and now we want to write the server side code that handles the request and then responds with some data.
-
-![request](http://i.imgur.com/YXgj8.png)
 
 
 ### Express file tree
@@ -119,7 +133,7 @@ Note that the `app` object has a method called `.get()` which takes two argument
 
 ### Game Plan
 
-Today's <a href="https://github.com/SF-WDI-LABS/express-intro" target="_blank">exercises</a> are set up a bit like a tutorial to walk you through:
+Today's <a href="https://github.com/sf-wdi-31/express-intro" target="_blank">exercises</a> are set up a bit like a tutorial to walk you through:
 
   * creating a new project with Node and Express
   * creating routes for clients to make requests to your server
@@ -137,10 +151,7 @@ Today's <a href="https://github.com/SF-WDI-LABS/express-intro" target="_blank">e
 
 ###Check for Understanding
 
-<details>
-  <summary>Thought provoking question</summary>
-  <p>Mind-blowing explanation</p>
-</details>
+
 
 ## Independent Practice
 Refine the skills covered in this workshop with this [lab](#)
