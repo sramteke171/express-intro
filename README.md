@@ -42,7 +42,7 @@ We need to write the code that handles requests and figures out how to respond. 
 
 To write server side code, is to lay out all of the possible requests that might come in and give instructions for how to handle each type of request.
 
-![request](http://i.imgur.com/YXgj8.png)
+![request](https://i.imgur.com/YXgj8.png)
 
 
 ![image](https://cloud.githubusercontent.com/assets/6520345/18041555/0345ba10-6d6f-11e6-9a6f-c008aac1935a.png)
