@@ -1,5 +1,5 @@
 <!--
-Creator: Cory Fauver
+Creator: Cory Fauver & Justin Castilla
 Market: SF
 -->
 
@@ -88,14 +88,12 @@ Much like jQuery does for JavaScript, Express provides easy, intuitive syntax an
 ### Hello World in Express
 
 ```javascript
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-})
+app.get('/', (req, res) => res.send('Hello World!'))
 
-var server = app.listen(3000);
+const server = app.listen(3000);
 ```
 
 
@@ -129,7 +127,7 @@ Let's look at a basic `get` method in an express app.
 
 ```js
 // server.js
-  var taquerias = [
+  let taquerias = [
     { name: "La Taqueria" },
     { name: "El Farolito" },
     { name: "Taqueria Cancun" }
@@ -137,9 +135,7 @@ Let's look at a basic `get` method in an express app.
 ```
 
 ```js
-  app.get('/api/taquerias', function (req, res) {
-    res.json(taquerias);
-  });
+  app.get('/api/taquerias', (req, res) => res.json(taquerias) );
 ```
 
 Note that the `app` object has a method called `.get()` which takes two arguments: a url and a callback function. The callback takes two arguments: `req` and `res`. These stand for "Request" and "Response" from the request response cycle. We'll be console logging these objects in the exercises.
