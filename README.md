@@ -85,77 +85,110 @@ Express is a cutting-edge, unopinionated, server-side JavaScript framework that 
 
 Much like jQuery does for JavaScript, Express provides easy, intuitive syntax and a lot of built in functionality.
 
-### Hello World in Express
+## Set up a basic Express server
+
+Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function
 
 ```javascript
 const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => res.send('Hello World!'))
-
-const server = app.listen(3000);
 ```
 
+- The `require()` function takes whatever code was written for the specified library and returns it
+    - We'll typically store the return value of `require()` in a variable of the same name
+        - Think of the variable as the library itself
+- By reading [the documentation](https://www.npmjs.com/package/express), we can figure out how to use what is returned by  `require('express')`
 
+1. Install it: `npm install express`
+1. Create a file called server.js
+1. Inside server.js, write the following
 
+    ```javascript
+    const express = require('express'); //from documentation: express is function
+    const app = express();//app is an object
 
-### Express file tree
+    app.listen(3000, ()=>{
+        console.log("I am listening");
+    });
+    ```
 
-With frontend and backend code to organize, we should make sure to keep our files in a logical order.
+1. Start the app by executing `node server.js` in the command line
+1. Visit http://localhost:3000/ in your browser.  You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
 
-```
-├── server.js  // your server code
-├── package.json    // lists dependencies; changed by npm install --save somePackage
-├── public  // i.e. client-side
-│   ├── images  // images to serve to client
-│   ├── scripts
-│       └── app.js   // client-side javascript file
-│   └── styles
-│       └── style.css
-├── vendor // optional 2nd public dir for jQuery & bootstrap if we choose not to use CDNs
-├── views  // html files that we'll serve
-│   └── index.html
-└── node_modules  // don't edit files in here!
-    ├── express // etc
-```
+## Set up a basic GET route
 
-> We should also add `node_modules` to a `.gitignore` file so it is not checked into git.  Future developers can just run `npm install` to get the packages listed in `package.json`
+Now we'll create a basic GET route so that visitors to (clients of) our web-server can retrieve some information from it
 
-**In Express**
+```javascript
+const express = require('express'); //from documentation: express is function
+const app = express();//app is an object
 
-Let's look at a basic `get` method in an express app.
+app.get('/somedata', (request, response) => {
+    response.send('here is your information');
+});
 
-```js
-// server.js
-  let taquerias = [
-    { name: "La Taqueria" },
-    { name: "El Farolito" },
-    { name: "Taqueria Cancun" }
-  ]
-```
-
-```js
-  app.get('/api/taquerias', (req, res) => res.json(taquerias) );
+app.listen(3000, () => {
+    console.log("I am listening");
+});
 ```
 
-Note that the `app` object has a method called `.get()` which takes two arguments: a url and a callback function. The callback takes two arguments: `req` and `res`. These stand for "Request" and "Response" from the request response cycle. We'll be console logging these objects in the exercises.
+- The function passed as a second parameter to `app.get()` is executed each time a user (client) goes to http://localhost:3000/somedata
+- The function (callback) takes two parameters
+    - `request`
+        - object containing information about the request made (browser, ip, query params, etc)
+    - `response`
+        - object containing methods for sending information back to the user (client)
 
-### Game Plan
+## Use nodemon to restart your sever when your code changes
 
-Today's [exercises](https://git.generalassemb.ly/sf-wdi-46/express-intro-lab) are set up a bit like a tutorial to walk you through:
+An NPM package called `nodemon` allows us to run code just like `node`, but it will restart the application whenever code in the application's directory is changed.
 
-  * creating a new project with Node and Express
-  * creating routes for clients to make requests to your server
-  * storing data on the server
-  * responding to GET requests with simple strings (`res.send`), or JSON data (`res.json`)
-  * serving static files (images, css...)
-
-
+1. Install it `npm install nodemon -g`
+    - the `-g` tells npm to make the package available for use in the terminal in any directory (globally)
+1. Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
 
 ## Closing Thoughts
 - This afternoon we're going to learn more about the details of routes and resource serving in Express apps.
 - Check your own understanding: Do you know the differences between Node's role and Express's role? What do each of them do?
 - You'll be using this technology for the next several weeks!
+
+## Bonus: Save a record of what packages your application uses
+
+- In general, we don't want to store our package code in our repositories, because it increases the size of the repo unnecessarily
+- We can install our packages like normal but keep track of what packages were installed in a `package.json` file.
+    - Then when other users download our code
+        1. They simply call `npm install`
+        1. NPM will then look in the package.json file to see what packages need to be installed and install them without requiring the user to type `npm install some-package` for each package the app depends on (dependency)
+
+1. In the terminal, type: `npm init`
+1. Keep hitting enter, until the program finishes
+    - you should now have a package.json file
+1. Install a package with `npm install some-package --save`
+    - The `--save` tells npm to keep a record inside `pacakge.json` that the application depends on the package installed
+
+Let's test this out:
+
+1. `rm -r node_modules`
+1. `npm init`
+1. `npm install express --save`
+1. `rm -r node_modules`
+    - simulates another developer downloading your code
+1. `npm install`
+1. Look inside the `node_mdules` directory to see if `express` was installed
+
+In general, we can tell git to ignore `node_modules` directories so that they don't get added accidentally
+
+1. Create a file called `.gitignore`
+1. In it, add the line `node_modules`
+
+We can also edit package.json so that we don't need specify the script that we're going to run.  Do one of the following:
+
+- After doing `npm init`
+    - when it says `entry point: (index.js)`, specify which file you want to use (e.g. server.js)
+- Edit package.json
+    - where it says `"main": "index.js",` change the file name (e.g. server.js)
+
+Now we can simply run `nodemon` without specifying the file name
+
 
 ## Additional Resources
 1. <a href="http://expressjs.com/starter/installing.html" target="_blank">Starting an Express Project</a>
