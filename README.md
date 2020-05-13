@@ -29,12 +29,6 @@ These are the first tools we'll use to write server-side code. In order to be a 
 - draw a figure of the request-response cycle with the details filled in on the front end (user, event listeners, AJAX, success callbacks, and HTTP verbs).
 - make an AJAX request to a third party API and explore the JSON data it returns.
 
-## What is a server?
-
-<details>
-  <summary>Take 5 minutes to search the web to pull together a working definition of what a "server" is and what it does.</summary>
-  <h5>Meta question: how did you go about searching? </h5>
-</details>
 
 ## What does it mean to program a server?
 
@@ -87,7 +81,34 @@ Much like jQuery does for JavaScript, Express provides easy, intuitive syntax an
 
 ## Set up a basic Express server
 
-Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function
+Let's first create a directory for our app. We'll call it `fruit-app`.
+
+```
+mkdir fruit-app
+cd fruit-app
+```
+
+Next we'll run `npm init` to initialize our app and create `package.json`.
+
+```
+This utility will walk you through creating a package.json file.It only covers the most common items, and tries to guess sensible defaults.See `npm help json` for definitive documentation on these fieldsand exactly what they do.Use `npm install <pkg>` afterwards to install a package andsave it as a dependency in the package.json file.Press ^C at any time to quit.package name: (fruit-app)version: (1.0.0)description:entry point: (index.js) server.jstest command:git repository:keywords:author:license: (ISC)About to write to C:\Users\ishaarora\Documents\cfg-seir-1\practice\fruit-app\package.json:{  "name": "fruit-app",  "version": "1.0.0",  "description": "",  "main": "server.js",  "dependencies": {    "express": "^4.17.1"  },  "devDependencies": {},  "scripts": {    "test": "echo \"Error: no test specified\" && exit 1"  },  "author": "",  "license": "ISC"}Is this OK? (yes) yes
+```
+
+After this if you run `dir` you'll see a new file `package.json`
+
+Install Express by running `npm install express` in cmd prompt.
+
+Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function.
+
+But first we need to create a file called `server.js`
+
+```
+type nul > server.js
+```
+
+Open our app in vs code `code .`. 
+
+Inside `server.js`, write the following
 
 ```javascript
 const express = require('express');
@@ -96,23 +117,21 @@ const express = require('express');
 - The `require()` function takes whatever code was written for the specified library and returns it
     - We'll typically store the return value of `require()` in a variable of the same name
         - Think of the variable as the library itself
-- By reading [the documentation](https://www.npmjs.com/package/express), we can figure out how to use what is returned by  `require('express')`
+- By reading [the documentation](https://www.npmjs.com/package/express), we can figure out how to use what is returned by  `require('express')`.
 
-1. Install it: `npm install express`
-1. Create a file called server.js
-1. Inside server.js, write the following
 
-    ```javascript
-    const express = require('express'); //from documentation: express is function
-    const app = express();//app is an object
+```
+const express = require('express'); //from documentation: express is function
+const app = express();//app is an object
 
-    app.listen(3000, ()=>{
-        console.log("I am listening");
-    });
-    ```
+app.listen(3000, ()=>{
+    console.log("I am listening");
+});
+    
+```
 
 1. Start the app by executing `node server.js` in the command line
-1. Visit http://localhost:3000/ in your browser.  You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
+1. Visit [http://localhost:3000/](http://localhost:3000/) in your browser.  You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
 
 ## Set up a basic GET route
 
@@ -122,21 +141,23 @@ Now we'll create a basic GET route so that visitors to (clients of) our web-serv
 const express = require('express'); //from documentation: express is function
 const app = express();//app is an object
 
-app.get('/somedata', (request, response) => {
-    response.send('here is your information');
+app.get('/somedata', (req, res) => {
+    res.send('here is your information');
 });
 
 app.listen(3000, () => {
-    console.log("I am listening");
+    console.log("listening");
 });
 ```
 
-- The function passed as a second parameter to `app.get()` is executed each time a user (client) goes to http://localhost:3000/somedata
+- The function passed as a second parameter to `app.get()` is executed each time a user (client) goes to `http://localhost:3000/somedata`
 - The function (callback) takes two parameters
-    - `request`
+    - `req`
         - object containing information about the request made (browser, ip, query params, etc)
-    - `response`
+    - `res`
         - object containing methods for sending information back to the user (client)
+
+Now let's open Postman app to call [http://localhost:3000/somedata](http://localhost:3000/somedata) to see what you get.
 
 ## Use nodemon to restart your sever when your code changes
 
