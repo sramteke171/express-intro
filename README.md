@@ -232,7 +232,7 @@ Let's test this out:
 1. `rm -r node_modules`
     - simulates another developer downloading your code
 1. `npm install`
-1. Look inside the `node_mdules` directory to see if `express` was installed
+1. Look inside the `node_modules` directory to see if `express` was installed
 
 In general, we can tell git to ignore `node_modules` directories so that they don't get added accidentally
 
