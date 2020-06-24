@@ -91,10 +91,48 @@ cd fruit-app
 Next we'll run `npm init` to initialize our app and create `package.json`.
 
 ```
-This utility will walk you through creating a package.json file.It only covers the most common items, and tries to guess sensible defaults.See `npm help json` for definitive documentation on these fieldsand exactly what they do.Use `npm install <pkg>` afterwards to install a package andsave it as a dependency in the package.json file.Press ^C at any time to quit.package name: (fruit-app)version: (1.0.0)description:entry point: (index.js) server.jstest command:git repository:keywords:author:license: (ISC)About to write to C:\Users\ishaarora\Documents\cfg-seir-1\practice\fruit-app\package.json:{  "name": "fruit-app",  "version": "1.0.0",  "description": "",  "main": "server.js",  "dependencies": {    "express": "^4.17.1"  },  "devDependencies": {},  "scripts": {    "test": "echo \"Error: no test specified\" && exit 1"  },  "author": "",  "license": "ISC"}Is this OK? (yes) yes
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (fruit-app)
+version: (1.0.0)
+description:
+entry point: (index.js) server.js
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to C:\Users\ishaarora\Documents\cfg-seir-1\practice\fruit-app\package.json:
+
+{
+  "name": "fruit-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
 ```
 
-After this if you run `dir` you'll see a new file `package.json`
+After this if you run `ls` you'll see a new file `package.json`
 
 Install Express by running `npm install express` in cmd prompt.
 
@@ -103,7 +141,7 @@ Now that the library has been installed (downloaded), we can use it in our code,
 But first we need to create a file called `server.js`
 
 ```
-type nul > server.js
+touch server.js
 ```
 
 Open our app in vs code `code .`. 
