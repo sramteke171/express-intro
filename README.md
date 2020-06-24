@@ -83,14 +83,14 @@ Much like jQuery does for JavaScript, Express provides easy, intuitive syntax an
 
 Let's first create a directory for our app. We'll call it `fruit-app`.
 
-```
+```bash
 mkdir fruit-app
 cd fruit-app
 ```
 
 Next we'll run `npm init` to initialize our app and create `package.json`.
 
-```
+```bash
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -134,13 +134,13 @@ Is this OK? (yes) yes
 
 After this if you run `ls` you'll see a new file `package.json`
 
-Install Express by running `npm install express` in cmd prompt.
+Install Express by running `npm install express` in Terminal.
 
 Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function.
 
 But first we need to create a file called `server.js`
 
-```
+```bash
 touch server.js
 ```
 
@@ -158,7 +158,7 @@ const express = require('express');
 - By reading [the documentation](https://www.npmjs.com/package/express), we can figure out how to use what is returned by  `require('express')`.
 
 
-```
+```js
 const express = require('express'); //from documentation: express is function
 const app = express();//app is an object
 
