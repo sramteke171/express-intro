@@ -210,8 +210,8 @@ An NPM package called `nodemon` allows us to run code just like `node`, but it w
 - Check your own understanding: Do you know the differences between Node's role and Express's role? What do each of them do?
 - You'll be using this technology for the next several weeks!
 
-## Bonus: Save a record of what packages your application uses
-
+## Create `.gitignore-global`
+<!-- 
 - In general, we don't want to store our package code in our repositories, because it increases the size of the repo unnecessarily
 - We can install our packages like normal but keep track of what packages were installed in a `package.json` file.
     - Then when other users download our code
@@ -233,6 +233,7 @@ Let's test this out:
     - simulates another developer downloading your code
 1. `npm install`
 1. Look inside the `node_modules` directory to see if `express` was installed
+-->
 
 In general, we can tell git to ignore `node_modules` directories so that they don't get added accidentally
 
@@ -242,180 +243,184 @@ In general, we can tell git to ignore `node_modules` directories so that they do
    
 1. In the file, copy and paste the code below. It's overkill, but it should ignore everything we'll use in class.
 
- ```bash
- # via https://github.com/github/gitignore unless otherwise noted
- # Currently includes:
- # - macOS
- # - Sublime Text
- # - VS Code
- # - Node (typically project-level gitignore, not global)
+   ```bash
+   # via https://github.com/github/gitignore unless otherwise noted
+   # Currently includes:
+   # - macOS
+   # - Sublime Text
+   # - VS Code
+   # - Node (typically project-level gitignore, not global)
 
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # macOS
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # General
- .DS_Store
- .AppleDouble
- .LSOverride
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # macOS
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # General
+   .DS_Store
+   .AppleDouble
+   .LSOverride
 
- # Icon must end with two \r
- Icon
+   # Icon must end with two \r
+   Icon
 
 
- # Thumbnails
- ._*
+   # Thumbnails
+   ._*
 
- # Files that might appear in the root of a volume
- .DocumentRevisions-V100
- .fseventsd
- .Spotlight-V100
- .TemporaryItems
- .Trashes
- .VolumeIcon.icns
- .com.apple.timemachine.donotpresent
+   # Files that might appear in the root of a volume
+   .DocumentRevisions-V100
+   .fseventsd
+   .Spotlight-V100
+   .TemporaryItems
+   .Trashes
+   .VolumeIcon.icns
+   .com.apple.timemachine.donotpresent
 
- # Directories potentially created on remote AFP share
- .AppleDB
- .AppleDesktop
- Network Trash Folder
- Temporary Items
- .apdisk
+   # Directories potentially created on remote AFP share
+   .AppleDB
+   .AppleDesktop
+   Network Trash Folder
+   Temporary Items
+   .apdisk
 
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # Sublime Text
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # Cache files for Sublime Text
- *.tmlanguage.cache
- *.tmPreferences.cache
- *.stTheme.cache
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # Sublime Text
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # Cache files for Sublime Text
+   *.tmlanguage.cache
+   *.tmPreferences.cache
+   *.stTheme.cache
 
- # Workspace files are user-specific
- *.sublime-workspace
+   # Workspace files are user-specific
+   *.sublime-workspace
 
- # Project files should be checked into the repository, unless a significant
- # proportion of contributors will probably not be using Sublime Text
- # *.sublime-project
+   # Project files should be checked into the repository, unless a significant
+   # proportion of contributors will probably not be using Sublime Text
+   # *.sublime-project
 
- # SFTP configuration file
- sftp-config.json
+   # SFTP configuration file
+   sftp-config.json
 
- # Package control specific files
- Package Control.last-run
- Package Control.ca-list
- Package Control.ca-bundle
- Package Control.system-ca-bundle
- Package Control.cache/
- Package Control.ca-certs/
- Package Control.merged-ca-bundle
- Package Control.user-ca-bundle
- oscrypto-ca-bundle.crt
- bh_unicode_properties.cache
+   # Package control specific files
+   Package Control.last-run
+   Package Control.ca-list
+   Package Control.ca-bundle
+   Package Control.system-ca-bundle
+   Package Control.cache/
+   Package Control.ca-certs/
+   Package Control.merged-ca-bundle
+   Package Control.user-ca-bundle
+   oscrypto-ca-bundle.crt
+   bh_unicode_properties.cache
 
- # Sublime-github package stores a github token in this file
- # https://packagecontrol.io/packages/sublime-github
- GitHub.sublime-settings
+   # Sublime-github package stores a github token in this file
+   # https://packagecontrol.io/packages/sublime-github
+   GitHub.sublime-settings
 
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # VS Code
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- .vscode/*
- !.vscode/settings.json
- !.vscode/tasks.json
- !.vscode/launch.json
- !.vscode/extensions.json
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # VS Code
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   .vscode/*
+   !.vscode/settings.json
+   !.vscode/tasks.json
+   !.vscode/launch.json
+   !.vscode/extensions.json
 
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # Node
- # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- # Logs
- logs
- *.log
- npm-debug.log*
- yarn-debug.log*
- yarn-error.log*
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # Node
+   # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   # Logs
+   logs
+   *.log
+   npm-debug.log*
+   yarn-debug.log*
+   yarn-error.log*
 
- # Runtime data
- pids
- *.pid
- *.seed
- *.pid.lock
+   # Runtime data
+   pids
+   *.pid
+   *.seed
+   *.pid.lock
 
- # Directory for instrumented libs generated by jscoverage/JSCover
- lib-cov
+   # Directory for instrumented libs generated by jscoverage/JSCover
+   lib-cov
 
- # Coverage directory used by tools like istanbul
- coverage
+   # Coverage directory used by tools like istanbul
+   coverage
 
- # nyc test coverage
- .nyc_output
+   # nyc test coverage
+   .nyc_output
 
- # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
- .grunt
+   # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+   .grunt
 
- # Bower dependency directory (https://bower.io/)
- bower_components
+   # Bower dependency directory (https://bower.io/)
+   bower_components
 
- # node-waf configuration
- .lock-wscript
+   # node-waf configuration
+   .lock-wscript
 
- # Compiled binary addons (https://nodejs.org/api/addons.html)
- build/Release
+   # Compiled binary addons (https://nodejs.org/api/addons.html)
+   build/Release
 
- # Dependency directories
- node_modules/
- jspm_packages/
+   # Dependency directories
+   node_modules/
+   jspm_packages/
 
- # TypeScript v1 declaration files
- typings/
+   # TypeScript v1 declaration files
+   typings/
 
- # Optional npm cache directory
- .npm
+   # Optional npm cache directory
+   .npm
 
- # Optional eslint cache
- .eslintcache
+   # Optional eslint cache
+   .eslintcache
 
- # Optional REPL history
- .node_repl_history
+   # Optional REPL history
+   .node_repl_history
 
- # Output of 'npm pack'
- *.tgz
+   # Output of 'npm pack'
+   *.tgz
 
- # Yarn Integrity file
- .yarn-integrity
+   # Yarn Integrity file
+   .yarn-integrity
 
- # dotenv environment variables file
- .env
- .env.test
- .env_local
+   # dotenv environment variables file
+   .env
+   .env.test
+   .env_local
 
- # parcel-bundler cache (https://parceljs.org/)
- .cache
+   # parcel-bundler cache (https://parceljs.org/)
+   .cache
 
- # next.js build output
- .next
+   # next.js build output
+   .next
 
- # nuxt.js build output
- .nuxt
+   # nuxt.js build output
+   .nuxt
 
- # vuepress build output
- .vuepress/dist
+   # vuepress build output
+   .vuepress/dist
 
- # Serverless directories
- .serverless/
+   # Serverless directories
+   .serverless/
 
- # FuseBox cache
- .fusebox/
+   # FuseBox cache
+   .fusebox/
 
- # DynamoDB Local files
- .dynamodb/
+   # DynamoDB Local files
+   .dynamodb/
 
- # Python
- __pycache__
- ```
+   # Python
+   __pycache__
+   ```
 
 1. Close down your Terminal and re-open. Now, going forward, git will ignore those files and folders when you git add.
 
-We can also edit package.json so that we don't need specify the script that we're going to run.  Do one of the following:
+<br>
+
+## Update package.json
+
+We can also edit `package.json` so that we don't need specify the script that we're going to run.  Do one of the following:
 
 - After doing `npm init`
     - when it says `entry point: (index.js)`, specify which file you want to use (e.g. server.js)
